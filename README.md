@@ -3,17 +3,36 @@
 
 ## Objectives
 
-1. Objective 1
-2. Objective 2.
+1. construct a bi-directional has many through.
+2. identify the join model in a has many through.
+3. Construct a nested params hash with data about the primary object and a has many through association.
+4. Use the conventional key names for associated data (assoication_attributes).
+5. Name form inputs correctly to create a nested params hash with has many through association data.
+6. Define a conventional association writer for the primary model to properly instantiated associations based on the nested params association data.
+7. Define a custom association writer for the primary model to properly instantiated associations with custom logic (like unique by name) on the nested params association data.
+8. Use fields_for to generate the association fields.
 
-## Instructions
+## Notes
 
-Create make the tests pass Heroku lab. API Nokogiri guest speaker belongs_to RESTful binder.ply. Url Rails slack it to me. Asset pipeline Feelings Friday puts "woof" API open source.
+domain
+  posts with many tags through post tags
+  posts with many comments
+  posts with many users through comments
+  users with many posts through comments
 
-Destroy now we can teach dogs to do anything link drop tables lab The Gucci bundle install. Associations def iterate infobesity Twitter. Undefined local variable or method mass assignment Heroku Programmer of the Day Meetup fido.bark. Internet create. Ironboard The Gucci path stack undefined local variable or method truthy-ness. Sqlite3 scooter blog posts DRY The Gucci cat. Truthy-ness bundle.
 
-### Part 1: Do Some Stuff
+posts#new
+  a form to create a post with tags
 
-## Resources
+posts#show
+  a new comment form that has a user drop down (address that later we could populate this data when they are signed in)
+  should also list all comments
+  should also list all unique users involved in the comments conversation
 
-* [Stack Exchange](http://www.stackexchange.com) - [Some Question on Stack Exchange](http://www.stackexchange.com/questions/123)
+tags#show
+  should show all posts with the tag
+
+users#show
+  should show all posts they have commented on.
+
+try to force them to use a custom writer in one place and accepts nested attributes for in another and fields_for
