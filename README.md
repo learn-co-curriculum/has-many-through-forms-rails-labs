@@ -36,3 +36,5 @@ users#show
   should show all posts they have commented on.
 
 try to force them to use a custom writer in one place and accepts nested attributes for in another and fields_for
+
+<a href='https://learn.co/lessons/has-many-through-forms-rails-labs' data-visibility='hidden'>View this lesson on Learn.co</a>
