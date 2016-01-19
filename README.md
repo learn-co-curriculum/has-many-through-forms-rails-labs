@@ -12,29 +12,23 @@
 7. Define a custom association writer for the primary model to properly instantiated associations with custom logic (like unique by name) on the nested params association data.
 8. Use fields_for to generate the association fields.
 
-## Notes
+## Overview
 
-domain
-  posts with many tags through post tags
-  posts with many comments
-  posts with many users through comments
-  users with many posts through comments
+We've looked at the schema behind associating posts with comments, categories, and users - let's build that out so that we can actually create new records with forms! For this one, your models are already stubbed out, but you may need to update them to make your forms work properly.
 
+## Instructions
 
-posts#new
-  a form to create a post with tags
+1. Create a form at `posts#new` to create a new post. The form should include text boxes for us to select categories as well as a text field to create a new category. You should do this with a nested form. Also, typing in a Category name that already exists should not create a new category.
 
-posts#show
-  a new comment form that has a user drop down (address that later we could populate this data when they are signed in)
-  should also list all comments
-  should also list all unique users involved in the comments conversation
+2. Create a posts show page with four sections.
+  1. The title and content of the post.
+  2. All of the comments associated with the post.
+  3. A list of all the unique users who have commented on the post. A user's name should only show up once in this section, even if they've commented multiple times.
+  4. A form to add a new comment. The form should have a drop down menu to select a user (we'll change this in future lessons to automatically associate the comment with a logged-in user). We should also be able to create a new user here and automatically associate it with the post.
 
-tags#show
-  should show all posts with the tag
+3. Create a users show page that displays all of the posts a user has commented on.
 
-users#show
-  should show all posts they have commented on.
+4. Create a categories show page that shows all of the posts associated with a given category.
 
-try to force them to use a custom writer in one place and accepts nested attributes for in another and fields_for
 
 <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' data-visibility='hidden'>View this lesson on Learn.co</a>
