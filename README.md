@@ -14,13 +14,13 @@
 
 ## Overview
 
-We've looked at the schema behind associating posts with comments, categories, and users - let's build that out so that we can actually create new records with forms! For this one, your models are already stubbed out, but you may need to update them to make your forms work properly.
+We've looked at setting up the associations behind posts with comments, categories, and users. Now, let's actually build give our users the ability to create new comments, users, and categories! For this lab, your models are already stubbed out, but you may need to update them to make your forms work properly.
 
 ## Instructions
 
-1. Create a form at `posts#new` to create a new post. The form should include text boxes for us to select categories as well as a text field to create a new category. You should do this with a nested form. Also, typing in a Category name that already exists should not create a new category.
+1. Create a form at `posts#new` to create a new post. The form should include check boxes for us to select categories as well as a text field to create a new category. You should do this with a nested form so that our controller stays thin. Also, typing in a Category name that already exists should not create a new category. Instead, if we type in "Cool" and that category already exists, we should select it from the database and associate the existing category with the post we've created.
 
-2. Create a posts show page with four sections.
+2. Create a posts show page to display the following:
   1. The title and content of the post.
   2. All of the comments associated with the post.
   3. A list of all the unique users who have commented on the post. A user's name should only show up once in this section, even if they've commented multiple times.
@@ -29,6 +29,16 @@ We've looked at the schema behind associating posts with comments, categories, a
 3. Create a users show page that links to all of the posts a user has commented on.
 
 4. Create a categories show page that links to all of the posts associated with a given category.
+
+## Hints
+
++ When creating new comments, we should only create a new user if they filled in that input. `accepts_nested_attributes_for` has a `reject_if` option that you can configure to only create new records if all the fields aren't blank.
++ Also, the select box that we use for the users needs to have a blank option - check out the `include_blank` option for `collection_select`
+
+## Resources
+
++ [Accepts Nested Attributes For](http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
++ [Collection Select](http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)
 
 
 <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' data-visibility='hidden'>View this lesson on Learn.co</a>
