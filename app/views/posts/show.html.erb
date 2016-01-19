@@ -1,1 +1,18 @@
-<%= render @post %>
+<h2><%= @post.title %></h2>
+<%= @post.content %>
+<h3>Categories</h3>
+<% @post.categories.each do |category| %>
+  <%= category.name %>
+<% end %>
+<% @post.comments.each do |comment| %>
+  <%= comment.user.username %> says <%= comment.content %>
+<% end %>
+
+<h3>Add a Comment</h3>
+<%= form_for @post.comments.build do |f| %>
+  <%= f.label "Content" %>
+  <%= f.text_field :content %>
+  <%= f.collection_select :user_id, User.all, :id, :name %>
+  <%= f.hidden_field :post_id %>
+  <%= f.submit %>
+<% end %>
