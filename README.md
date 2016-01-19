@@ -26,9 +26,9 @@ We've looked at the schema behind associating posts with comments, categories, a
   3. A list of all the unique users who have commented on the post. A user's name should only show up once in this section, even if they've commented multiple times.
   4. A form to add a new comment. The form should have a drop down menu to select a user (we'll change this in future lessons to automatically associate the comment with a logged-in user). We should also be able to create a new user here and automatically associate it with the post.
 
-3. Create a users show page that displays all of the posts a user has commented on.
+3. Create a users show page that links to all of the posts a user has commented on.
 
-4. Create a categories show page that shows all of the posts associated with a given category.
+4. Create a categories show page that links to all of the posts associated with a given category.
 
 
 <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' data-visibility='hidden'>View this lesson on Learn.co</a>
