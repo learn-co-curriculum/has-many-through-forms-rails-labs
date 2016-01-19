@@ -3,8 +3,8 @@
 
 ## Objectives
 
-1. construct a bi-directional has many through.
-2. identify the join model in a has many through.
+1. Construct a bi-directional has many through.
+2. Identify the join model in a has many through.
 3. Construct a nested params hash with data about the primary object and a has many through association.
 4. Use the conventional key names for associated data (assoication_attributes).
 5. Name form inputs correctly to create a nested params hash with has many through association data.
