@@ -41,4 +41,4 @@ We've looked at setting up the associations behind posts with comments, categori
 + [Collection Select](http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)
 
 
-<a href='https://learn.co/lessons/has-many-through-forms-rails-labs' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' title='Has Many Through Forms Rails Labs'>Has Many Through Forms Rails Labs</a> on Learn.co and start learning to code for free.</p>
