@@ -6,7 +6,7 @@
 1. Construct a bi-directional has many through.
 2. Identify the join model in a has many through.
 3. Construct a nested params hash with data about the primary object and a has many through association.
-4. Use the conventional key names for associated data (assoication_attributes).
+4. Use the conventional key names for associated data (association_attributes).
 5. Name form inputs correctly to create a nested params hash with has many through association data.
 6. Define a conventional association writer for the primary model to properly instantiated associations based on the nested params association data.
 7. Define a custom association writer for the primary model to properly instantiated associations with custom logic (like unique by name) on the nested params association data.
@@ -42,3 +42,5 @@ We've looked at setting up the associations behind posts with comments, categori
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' title='Has Many Through Forms Rails Labs'>Has Many Through Forms Rails Labs</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/has-many-through-forms-rails-labs'>Has Many Through in Forms Lab</a> on Learn.co and start learning to code for free.</p>
