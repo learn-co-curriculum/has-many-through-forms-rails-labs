@@ -42,3 +42,5 @@ We've looked at setting up the associations behind posts with comments, categori
 + [Lab Review](https://www.youtube.com/watch?v=k7s2LjVF3YY)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' title='Has Many Through Forms Rails Labs'>Has Many Through Forms Rails Labs</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/has-many-through-forms-rails-labs'>Has Many Through in Forms Lab</a> on Learn.co and start learning to code for free.</p>
