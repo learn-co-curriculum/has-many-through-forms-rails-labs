@@ -13,27 +13,33 @@ describe 'Posts', type: 'feature' do
 
     it 'can create a post without a new category' do
       click_button('Create Post')
+      @category = Post.last.categories.first.name
+      expect(@category).to be_empty
       expect(page).to have_content('Feeling Awesome')
     end
 
     it 'can create a post with a previously created category' do
       check('Cool')
       click_button('Create Post')
-      expect(page).to have_content('Cool')
+      @category = Post.last.categories.first.name
+      expect(@category).to eq('Cool')
     end
 
     it 'can create a post with a brand new category' do
       fill_in('post_categories_attributes_0_name', :with => 'Funny')
       click_button('Create Post')
-      expect(page).to have_content('Funny')
+      @category = Post.last.categories.first.name
+      expect(@category).to eq('Funny')
     end
 
     it 'can create a post with a brand new category and an existing category' do
       check('Cool')
       fill_in('post_categories_attributes_0_name', :with => 'Funny')
       click_button('Create Post')
-      expect(page).to have_content('Cool')
-      expect(page).to have_content('Funny')
+      @category1 = Post.last.categories.first.name
+      @category2 = Post.last.categories.last.name
+      expect(@category1).to eq('Cool')
+      expect(@category2).to eq('Funny')
     end
   end
 
@@ -54,6 +60,11 @@ describe 'Posts', type: 'feature' do
     it 'should display the content' do
       visit post_path(@post)
       expect(page).to have_content(@post.content)
+    end
+
+    it 'should display the categories' do
+      visit post_path(@post)
+      expect(page).to have_content(@post.categories.first.name)
     end
 
     it 'should display all of the comments for that post' do
