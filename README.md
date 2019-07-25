@@ -24,7 +24,11 @@ We've looked at setting up the associations behind posts with comments, categori
   1. The title and content of the post.
   2. All of the comments associated with the post.
   3. A list of all the unique users who have commented on the post. A user's name should only show up once in this section, even if they've commented multiple times.
-  4. A form to add a new comment. The form should have a drop-down menu to select a user (we'll change this in future lessons to automatically associate the comment with a logged-in user). We should also be able to create a new user here and automatically associate it with the post.
+  4. A form to add a new comment. The form should have a drop-down menu to select a user (we'll change this in future lessons to automatically associate the comment with a logged-in user). We should also be able to create a new user here and automatically associate it with the post. To associate a new comment with a post, you'll have to use a _[hidden field](https://apidock.com/rails/ActionView/Helpers/FormHelper/hidden_field)_:
+
+  ```erb
+  <%= f.hidden_field :post_id, value: @post.id %>
+  ```
 
 3. Create a `users#show` page that links to all of the posts a user has commented on.
 
@@ -40,5 +44,6 @@ We've looked at setting up the associations behind posts with comments, categori
 + [Accepts Nested Attributes For](http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
 + [Collection Select](http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)
 + [Lab Review](https://www.youtube.com/watch?v=k7s2LjVF3YY)
++ [API Doc: hidden_field](https://apidock.com/rails/ActionView/Helpers/FormHelper/hidden_field)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' title='Has Many Through Forms Rails Labs'>Has Many Through Forms Rails Labs</a> on Learn.co and start learning to code for free.</p>
