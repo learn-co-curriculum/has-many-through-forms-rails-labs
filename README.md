@@ -45,6 +45,3 @@ We've looked at setting up the associations behind posts with comments, categori
 + [Collection Select](http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)
 + [Lab Review](https://www.youtube.com/watch?v=k7s2LjVF3YY)
 + [API Doc: hidden_field](https://apidock.com/rails/ActionView/Helpers/FormHelper/hidden_field)
-
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/has-many-through-forms-rails-labs' title='Has Many Through Forms Rails Labs'>Has Many Through Forms Rails Labs</a> on Learn.co and start learning to code for free.</p>
