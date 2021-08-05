@@ -42,5 +42,4 @@ We've looked at setting up the associations behind posts with comments, categori
 
 - [Accepts Nested Attributes For](http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html)
 - [Collection Select](http://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)
-- [Lab Review](https://www.youtube.com/watch?v=k7s2LjVF3YY)
 - [API Doc: hidden_field](https://apidock.com/rails/ActionView/Helpers/FormHelper/hidden_field)
