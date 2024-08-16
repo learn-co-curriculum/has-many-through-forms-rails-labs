@@ -1,1 +1,45 @@
 
+<h2><%= @post.title %></h2>
+<p>
+  Categories:
+  <% @post.categories.each do |category|%>
+    <%= category.name %>
+   <% end %>
+</p>
+<p>
+  Content: <%= @post.content %>
+</p>
+Comments:
+<% @post.comments.each do |comment| %>
+  <p><%= "#{comment.user.username} says: #{comment.content}" if comment.user.present? %></p>
+<% end %>
+<br />
+
+Users:
+  <% @post.users.uniq.each do |user| %>
+    <p>
+    <%= link_to user.username, user_path(user) %>
+    </p>
+  <% end %>
+<br />
+
+Leave a Comment:
+<%= form_for @comment do |f| %>
+  <div class="field">
+    <%= f.label :content, "Add a Comment" %>
+    <%= f.text_field :content, id: 'comment_content', placeholder: "Add a new comment" %>
+
+    <%= f.label :user_id, "Select User" %>
+    <%= f.collection_select :user_id, User.all, :id, :username, prompt: "Choose user" %>
+
+    <%= f.fields_for :user, @comment.build_user do |user_fields| %>
+      <%= user_fields.text_field :username, placeholder: "Add a new user" %>
+    <% end %>
+
+     <%= f.hidden_field :post_id, value: @comment.post_id || @post.id %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Comment" %>
+  </div>
+<% end %>
