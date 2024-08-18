@@ -1,1 +1,19 @@
-<%= render 'form', post: Post.new %>
+
+<h1>New Post</h1>
+<%= form_for @post do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+
+  <%= f.label "Content" %>
+  <%= f.text_area :content %>
+
+  <%= f.collection_check_boxes :category_ids, Category.all.uniq, :id, :name %>
+
+  <%= f.fields_for :categories, @post.categories.build do |category_fields| %>
+    <%= category_fields.label :name, "Category" %>
+    <%= category_fields.text_field :name %>
+  <% end %>
+
+  <%= f.submit "Create Post" %>
+<% end %>
+
