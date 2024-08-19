@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :users
   resources :categories
+
+  resources :posts do
+    resources :comments, only: [:create]  # Nest comments under posts
+  end
 end

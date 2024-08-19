@@ -1,1 +1,67 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.content %></p>
 
+<h3> Categories </h3>
+<ul>
+  <%= @post.categories.each do |category|%>
+    <li>
+      <%= category.name %>
+    </li>
+  <% end %>
+</ul>
+
+<h3> Users </h3>
+<ul>
+  <%= @post.users.uniq.each do |user|%>
+    <li>
+      <%=link_to user.username, user_path(user) %>
+    </li>
+  <% end %>
+</ul>
+
+
+<h3>Comments:</h3>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+      <% if comment.user %>
+        <strong><%= comment.user.username %> says:</strong> <%= comment.content %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :post_id %>
+
+  <div class="field">
+    <%= f.label :content, "Comment" %><br>
+    <%= f.text_area :content %><br>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id, "Select User" %><br>
+    <%= f.collection_select :user_id, User.all, :id, :username %><br>
+  </div>
+
+  <h3>Or create a new user:</h3>
+  <%= f.fields_for :user, @user do |user_fields| %>
+    <%= user_fields.label :username %>
+    <%= user_fields.text_field :username %><br>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Create Comment"%>
+  </div>
+<% end %>
